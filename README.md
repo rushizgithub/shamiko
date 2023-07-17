@@ -39,3 +39,6 @@ _Currently, system apps (with uid%100000=1000) cannot be hidden even it's in the
 
 ### 0.4.1
 1. Add more hide mechanisms
+
+### 0.4.2
+1. Fix app zygote crash on Android 10-
