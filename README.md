@@ -48,3 +48,6 @@ _Currently, system apps (with uid%100000=1000) cannot be hidden even it's in the
 
 ### 0.4.4
 1. Fix module description not showing correctly
+
+### 0.6
+1. Hide more trace of Zygisk
