@@ -68,6 +68,11 @@ delete_services() {
   del_service_name "$POST_FS_DATA"
   del_service_name "$LATE_START_SERVICE"
   del_service_name "$BOOT_COMPLETED"
+  SERVICES=$(resetprop | grep 'init\.svc\..*\[stopped\]' | grep '[A-Z]' | grep -o 'init\.svc\.[a-zA-Z0-9]*')
+  for s in $SERVICES
+  do
+    resetprop --delete $s
+  done
 }
 
 check_reset_prop() {
@@ -112,6 +117,10 @@ contains_reset_prop() {
   check_reset_prop "vendor.boot.vbmeta.device_state" "locked"
   check_reset_prop "vendor.boot.verifiedbootstate" "green"
   check_reset_prop "ro.secureboot.lockstate" "locked"
+
+  # Realme special
+  check_reset_prop "ro.boot.realmebootstate" "green"
+  check_reset_prop "ro.boot.realme.lockstate" "1"
 
   # Hide that we booted from recovery when magisk is in recovery mode
   contains_reset_prop "ro.bootmode" "recovery" "unknown"

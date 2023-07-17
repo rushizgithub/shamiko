@@ -15,9 +15,9 @@ enforce_install_from_magisk_app() {
 
 check_magisk_version() {
   ui_print "- Magisk version: $MAGISK_VER_CODE"
-  if [ "$MAGISK_VER_CODE" -lt 24200 ]; then
+  if [ "$MAGISK_VER_CODE" -lt 26000 ]; then
     ui_print "*********************************************************"
-    ui_print "! Please install Magisk v24.2+ (24200+)"
+    ui_print "! Please install Magisk v26.0+ (26000+)"
     abort    "*********************************************************"
   fi
 }
@@ -56,6 +56,7 @@ fi
 extract "$ZIPFILE" 'checksum'           "$MODPATH"
 extract "$ZIPFILE" 'module.prop'        "$MODPATH"
 extract "$ZIPFILE" 'sepolicy.rule'      "$MODPATH"
+extract "$ZIPFILE" 'post-fs-data.sh'    "$MODPATH"
 extract "$ZIPFILE" 'service.sh'         "$MODPATH"
 extract "$ZIPFILE" 'uninstall.sh'       "$MODPATH"
 

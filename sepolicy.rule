@@ -1,2 +1,3 @@
 allow zygote unlabeled file { open read getattr }
 allow zygote zygote capability sys_chroot
+allow zygote adb_data_file dir search
