@@ -4,11 +4,21 @@
 
 ### Introduction
 Shamiko is a Zygisk module to hide Magisk root, Zygisk itself and Zygisk modules like riru hide.
-Shamiko read the list of apps to hide from Magisk's denylist for simplicity but it requires denylist to be disabled first.
+
+Shamiko read the denylist from Magisk for simplicity but it requires denylist enforcement to be disabled first.
+
+_Currently, system apps (with uid%100000=1000) cannot be hidden even it's in the denylist. This issue comes from Magisk._
+
 ### Usage
 1. Install Shamiko and enable Zygisk and reboot
-1. Turn on denylist to configure denylist.
-1. Once denylist is configured, disable it to activate Shamiko
+1. Configure denylist to add processes for hiding
+1. *DO NOT* turn on denylist enforcement
+
+#### Whitelist
+- You can create an empty file `/data/adb/shamiko/whitelist` to turn on whitelist mode and it can be triggered without reboot
+- Whitelist has significant performance and memory consumption issue, please use it only for testing
+- Only apps that was previously granted root from Magisk can access root
+- If you need to grant a new app root access, disable whitelist first
 
 ### Changelog
 #### 0.2.0
@@ -21,3 +31,11 @@ Shamiko read the list of apps to hide from Magisk's denylist for simplicity but 
 1. Request Magisk 23017+, which allows us to strip Java daemon and change denylist regardless of enforcement status
 1. Temporarily disable showing status in module description (need to find a new way for it)
 1. Support module update since Magisk 23017
+
+#### 0.4.0
+1. Add module files checksum
+1. Bring status show back
+1. Add running status file at `/data/adb/shamiko/.tmp/status`
+
+### 0.4.1
+1. Add more hide mechanisms

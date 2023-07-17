@@ -15,9 +15,9 @@ enforce_install_from_magisk_app() {
 
 check_magisk_version() {
   ui_print "- Magisk version: $MAGISK_VER_CODE"
-  if [ "$MAGISK_VER_CODE" -lt 23017 ]; then
+  if [ "$MAGISK_VER_CODE" -lt 24000 ]; then
     ui_print "*********************************************************"
-    ui_print "! Please install Magisk Lastest Canary (23017+)"
+    ui_print "! Please install Magisk v24.0+ (24000+)"
     abort    "*********************************************************"
   fi
 }
@@ -53,8 +53,10 @@ if [ "$API" -lt 27 ]; then
   abort "! Only support SDK 27+ devices"
 fi
 
+extract "$ZIPFILE" 'checksum'           "$MODPATH"
 extract "$ZIPFILE" 'module.prop'        "$MODPATH"
-extract "$ZIPFILE" 'sepolicy.rule'        "$MODPATH"
+extract "$ZIPFILE" 'sepolicy.rule'      "$MODPATH"
+extract "$ZIPFILE" 'service.sh'         "$MODPATH"
 extract "$ZIPFILE" 'uninstall.sh'       "$MODPATH"
 
 ui_print "- Extracting zygisk libraries"
