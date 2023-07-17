@@ -15,9 +15,9 @@ enforce_install_from_magisk_app() {
 
 check_magisk_version() {
   ui_print "- Magisk version: $MAGISK_VER_CODE"
-  if [ "$MAGISK_VER_CODE" -lt 24000 ]; then
+  if [ "$MAGISK_VER_CODE" -lt 24200 ]; then
     ui_print "*********************************************************"
-    ui_print "! Please install Magisk v24.0+ (24000+)"
+    ui_print "! Please install Magisk v24.2+ (24200+)"
     abort    "*********************************************************"
   fi
 }
