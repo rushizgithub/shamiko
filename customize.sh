@@ -50,7 +50,7 @@ else
 fi
 
 if [ "$API" -lt 27 ]; then
-  abort "! Only support SDK 27+ devices"
+  abort "! Only support Android 8.1+ devices"
 fi
 
 extract "$ZIPFILE" 'checksum'           "$MODPATH"
