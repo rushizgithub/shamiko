@@ -61,4 +61,7 @@ Shamiko read the denylist from Magisk for simplicity but it requires denylist en
 ### 0.7.2
 1. Fix a bug causing Zygisk on KernelSU failed to unload
 2. Abandon a useless fix leading to more detection
-2. Clean service.sh
+3. Clean service.sh
+
+### 0.7.3
+1. Follow root profile on KernelSU

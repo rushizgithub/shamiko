@@ -24,7 +24,7 @@ check_magisk_version() {
 
 check_ksu_version() {
   ui_print "- KernelSU version: $KSU_KERNEL_VER_CODE (kernel) + $KSU_VER_CODE (ksud)"
-  if ! [ "$KSU_KERNEL_VER_CODE" ] || [ "$KSU_KERNEL_VER_CODE" -lt 10818 ]; then
+  if ! [ "$KSU_KERNEL_VER_CODE" ] || [ "$KSU_KERNEL_VER_CODE" -lt 10940 ]; then
     ui_print "*********************************************************"
     ui_print "! KernelSU version is too old!"
     ui_print "! Please update KernelSU to latest version"
@@ -36,7 +36,7 @@ check_ksu_version() {
     ui_print "  as submodule instead of copying the source code"
     abort    "*********************************************************"
   fi
-  if ! [ "$KSU_VER_CODE" ] || [ "$KSU_VER_CODE" -lt 10818 ]; then
+  if ! [ "$KSU_VER_CODE" ] || [ "$KSU_VER_CODE" -lt 10942 ]; then
     ui_print "*********************************************************"
     ui_print "! ksud version is too old!"
     ui_print "! Please update KernelSU Manager to latest version"
@@ -47,7 +47,7 @@ check_ksu_version() {
 check_zygisksu_version() {
   ZYGISKSU_VERSION=$(cat /data/adb/modules/zygisksu/module.prop | grep versionCode | sed 's/versionCode=//g')
   ui_print "- Zygisksu version: $ZYGISKSU_VERSION"
-  if ! [ "$ZYGISKSU_VERSION" ] || [ "$ZYGISKSU_VERSION" -lt 78 ]; then
+  if ! [ "$ZYGISKSU_VERSION" ] || [ "$ZYGISKSU_VERSION" -lt 85 ]; then
     ui_print "*********************************************************"
     ui_print "! Zygisksu version is too old!"
     ui_print "! Please update Zygisksu to latest version"
