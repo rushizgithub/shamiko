@@ -54,3 +54,6 @@ Shamiko read the denylist from Magisk for simplicity but it requires denylist en
 1. Support Magisk 26.0
 2. Fix font loading
 3. Hide more traces of Magisk
+
+### 0.7.1
+1. Merge Magisk and KernelSU branch

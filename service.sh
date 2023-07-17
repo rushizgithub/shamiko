@@ -95,11 +95,6 @@ contains_reset_prop() {
   do
     sleep 1
   done
-  
-  # Xiaomi cross region flash...
-  # See https://github.com/topjohnwu/Magisk/pull/2470
-  contains_reset_prop ro.boot.hwc CN GLOBAL
-  contains_reset_prop ro.boot.hwcountry China GLOBAL
 
   check_reset_prop "ro.boot.vbmeta.device_state" "locked"
   check_reset_prop "ro.boot.verifiedbootstate" "green"
