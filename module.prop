@@ -1,7 +1,7 @@
 id=zygisk_shamiko
 name=Shamiko
-version=v0.7.1 (166)
-versionCode=166
+version=v0.7.2 (172)
+versionCode=172
 author=LSPosed Developers
 description=これで勝ったと思うなよ―――!!
 updateJson=https://lsposed.github.io/releases/shamiko.json
